@@ -3,38 +3,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
-// c.fillStyle = 'rgba(255, 0 ,0 , 0.5)';
-// c.fillRect(100, 100, 100, 100);
-// c.fillStyle = 'rgba(255, 0 ,123 , 0.5)';
-// c.fillRect(200, 200, 100, 100);
-// c.fillRect(300, 100, 100, 100);
-// c.fillStyle = 'rgb(0, 255, 0)';
-// c.fillRect(723, 145, 200, 200);
-
-// // lines
-
-// c.beginPath();
-// c.moveTo(50, 300);
-// c.lineTo(300, 100);
-// c.strokeStyle = 'blue';
-// c.stroke();
-
-// c.beginPath();
-// c.moveTo(100, 100);
-// c.lineTo(250, 500);
-// c.strokeStyle = 'red';
-// c.stroke();
-
-// for (let i = 0; i < 33; i++) {
-//     var x = Math.random() * window.innerWidth;
-//     var y = Math.random() * window.innerHeight;
-//     var randomColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 1)`
-//     console.log(randomColor);
-//     c.beginPath();
-//     c.arc(x, y, 30, 0, Math.PI * 2, false);
-//     c.strokeStyle = randomColor;
-//     c.stroke();   
-// }
 
 var mouse = {};
 var maxRadius = 40;
@@ -44,13 +12,7 @@ var colors = [
     '#36B39D',
     '#3E4142',
     '#0ABF46'
-]
-
-
-function randomRgba() {
-    return Math.floor(Math.random() * 256);
-}
-
+];
 
 window.addEventListener('mousemove', function (e) {
     mouse.x = e.x;
@@ -62,8 +24,6 @@ window.addEventListener('resize', function () {
     canvas.height = window.innerHeight;
     init();
 })
-
-
 
 function Circle(x, y, dx, dy, radius) {
     this.x = x;
@@ -78,7 +38,6 @@ function Circle(x, y, dx, dy, radius) {
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         c.stroke();
-        // c.fillStyle = `rgba(${randomRgba()}, ${randomRgba()}, ${randomRgba()}, ${Math.random()})`;
         c.fillStyle = this.color;
         c.fill();
     }
